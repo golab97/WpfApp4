@@ -1,0 +1,123 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="WpfApp4.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="482" Width="889" Closing="Window_Closing">
+    <Grid Margin="0,0,0,0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="315*"/>
+            <RowDefinition Height="104*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270*"/>
+            <ColumnDefinition Width="355*"/>
+            <ColumnDefinition Width="167*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Row="0" Grid.Column="0" Padding="0">
+            <TabItem Header="Com Port">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="PortBox"  HorizontalAlignment="Left" Margin="20,45,0,0" VerticalAlignment="Top" Width="95" Height="22" SelectedIndex="0"/>
+                    <Button x:Name="RefreshBtn" Content="REFRESH" HorizontalAlignment="Left" Margin="140,45,0,0" VerticalAlignment="Top" Width="90" Height="20"  FontFamily="Sitka Text " FontStyle="Italic" BorderThickness="0" SnapsToDevicePixels="True" Click="RefreshBtn_Click"/>
+                    <TextBox x:Name="MessageBox" HorizontalAlignment="Left" Height="55" Margin="20,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+                    <Button x:Name="SendBtn" Content="SEND" HorizontalAlignment="Left" Margin="140,185,0,0" VerticalAlignment="Top" Width="90" Height="20"  FontFamily="Sitka Text " FontStyle="Italic" BorderThickness="0" SnapsToDevicePixels="True" Click="SendBtn_Click" IsEnabled="False"/>
+                    <ComboBox x:Name="BaudRateBox" HorizontalAlignment="Left" Margin="20,75,0,0" VerticalAlignment="Top" Width="95" Height="22" SelectedIndex="0" >
+                        <System:String>9600</System:String>
+                        <System:String>19200</System:String>
+                        <System:String>38400</System:String>
+                        <System:String>57600</System:String>
+                        <System:String>115200</System:String>
+
+                    </ComboBox>
+                    <Button x:Name="ConnectBtn" Content="CONNECT" HorizontalAlignment="Left" Margin="140,77,0,0" VerticalAlignment="Top" Width="90" Height="20"  FontFamily="Sitka Text " FontStyle="Italic" BorderThickness="0" SnapsToDevicePixels="True" Click="ConnectBtn_Click"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Control">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="DevTypeBox" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+                        <System:String>GAMEPAD</System:String>
+                        <System:String>KEYBOARD</System:String>
+                    </ComboBox>
+                    <ComboBox x:Name="DeviceBox" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
+                    <Button x:Name="ConnectDevBtn" Content="CONNECT" HorizontalAlignment="Left" Margin="154,68,0,0" VerticalAlignment="Top" Width="90" Height="20"  FontFamily="Sitka Text " FontStyle="Italic" BorderThickness="0" SnapsToDevicePixels="True" Click="ConnectDevBtn_Click"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="38,7,0,0" TextWrapping="Wrap" Text="Device Type" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="52,47,0,0" TextWrapping="Wrap" Text="Device" VerticalAlignment="Top" RenderTransformOrigin="0.102,-0.188"/>
+                    <Button x:Name="RefreshDevBtn" Content="REFRESH" HorizontalAlignment="Left" Margin="154,23,0,0" VerticalAlignment="Top" Width="90" Height="20"  FontFamily="Sitka Text " FontStyle="Italic" BorderThickness="0" SnapsToDevicePixels="True" Click="RefreshDevBtn_Click"/>
+                    <Button x:Name="TestBtn" Content="TEST" HorizontalAlignment="Left" Margin="154,93,0,0" VerticalAlignment="Top" Width="90" Height="20"  FontFamily="Sitka Text " FontStyle="Italic" BorderThickness="0" SnapsToDevicePixels="True" Click="TestBtnClick" IsEnabled="False"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TabControl    Grid.Column="1" Grid.Row="0" Padding="0" >
+            <TabItem Header="Steering Pad">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="205*"/>
+                        <RowDefinition Height="32*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="117*"/>
+                        <ColumnDefinition Width="217*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Steering Sliders">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1">
+                        <ScrollBar x:Name="Axis1scrollBar"  Orientation="Horizontal" Grid.Column="1" Margin="0 10 0 0" Width="165" Maximum="360" Cursor="Arrow" IsEnabled="False" Value="180" />
+                        <ScrollBar x:Name="Axis2scrollBar"  Orientation="Horizontal" Grid.Column="1" Margin="0 10 0 0" Width="165" Maximum="360" Cursor="Arrow" IsEnabled="False" Value="180" />
+                        <ScrollBar x:Name="Axis3scrollBar"  Orientation="Horizontal" Grid.Column="1" Margin="0 10 0 0" Width="165" Maximum="360" Cursor="Arrow" IsEnabled="False" Value="180" />
+                        <ScrollBar x:Name="Axis4scrollBar"  Orientation="Horizontal" Grid.Column="1" Margin="0 10 0 0" Width="165" Maximum="360" Cursor="Arrow" IsEnabled="False" Value="180" />
+                        <ScrollBar x:Name="Axis5scrollBar"  Orientation="Horizontal" Grid.Column="1" Margin="0 10 0 0" Width="165" Maximum="360" Cursor="Arrow" IsEnabled="False" Value="180" />
+                        <ScrollBar x:Name="Axis6scrollBar"  Orientation="Horizontal" Grid.Column="1" Margin="0 10 0 0" Width="165" Maximum="360" Cursor="Arrow" IsEnabled="False" Value="180" />
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Sensivity">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+
+            <TabItem Header="Servos">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+
+        </TabControl>
+        <Grid  Background="#FFE5E5E5" Grid.Column="2" Grid.Row="0" Margin="0 22 0 0 ">
+            <StackPanel>
+
+                <TextBlock  Text="LEDS"  TextAlignment="Center" Margin="43,0,43,0" FontSize="16" FontWeight="Bold" FontFamily="Segoe UI Symbol" RenderTransformOrigin="1,0.5"  />
+
+                <TextBlock x:Name="RedLed" Grid.Column="0" Margin="43,10,43,0" Text="Alarm"  TextAlignment="Center" Width="100" Height="17" Background="#FFE5E5E5" FontFamily="Sitka Text " FontStyle="Italic"  SnapsToDevicePixels="True"/>
+                <TextBlock x:Name="YellowLed" Grid.Column="0" Margin="43,10,43,0" Text="Calibration" TextAlignment="Center" Width="100" Height="15" Background="#FFE5E5E5" FontFamily="Sitka Text " FontStyle="Italic"  SnapsToDevicePixels="True"/>
+                <TextBlock x:Name="WhieLed" Grid.Column="0" Margin="43,10,43,0" Text="Work" TextAlignment="Center" Width="100" Height="15" Background="#FFE5E5E5" FontFamily="Sitka Text " FontStyle="Italic"  SnapsToDevicePixels="True" >
+
+                </TextBlock>
+
+            </StackPanel>
+
+        </Grid>
+        <TextBox x:Name="ConsoleBox"   TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Padding="0" Grid.ColumnSpan="3" IsReadOnly="True" Grid.Row="1" />
+
+
+
+    </Grid>
+</Window>

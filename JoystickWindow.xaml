@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApp4.JoystickWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="JoystickWindow" Height="477" Width="1034">
+    <Grid Height="432" Margin="10,10,2,0" VerticalAlignment="Top">
+        <Grid Margin="356,45,0,37" Height="350" VerticalAlignment="Center" HorizontalAlignment="Left" Width="624">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="79*"/>
+                <ColumnDefinition Width="545*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="gamepad_PNG67.png"/>
+            </Grid.Background>
+            <TextBlock x:Name="UpArrowBtn"   Margin="48,60,451,256"  Background="{x:Null}" Grid.Column="1"/>
+            <TextBlock x:Name="RightArrowBtn"   Margin="95,95,414,215"  Background="{x:Null}" Grid.Column="1"/>
+            <TextBlock x:Name="LeftArrowBtn"  Margin="11,95,499,212" Background="{x:Null}" Height="43" Grid.Column="1"/>
+            <TextBlock x:Name="DownArrowBtn"   Margin="48,138,451,178"   Background="{x:Null}" Grid.Column="1"/>
+
+            <TextBlock x:Name="LeftUpTriggerBtn" Text="4" TextAlignment="Center" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" Height="18" Padding="0" Grid.Column="1"/>
+            <TextBlock x:Name="LeftDownTriggerBtn" Text="6" TextAlignment="Center" HorizontalAlignment="Left" Margin="11,-35,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" Height="18" Padding="0" Grid.Column="1"/>
+            <TextBlock x:Name="RightUpTriggerBtn" Text="5" TextAlignment="Center" HorizontalAlignment="Left" Margin="336,0,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" Height="18" Padding="0" Grid.Column="1"/>
+            <TextBlock x:Name="RighDownTriggerBtn" Text="7" TextAlignment="Center" HorizontalAlignment="Left" Margin="336,-35,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" Height="18" Padding="0,0,1,0" Grid.Column="1"/>
+            <Slider x:Name="HorizontalLeftJoy" HorizontalAlignment="Left" Margin="115,266,0,0" VerticalAlignment="Top" Width="70" Maximum="65535" Cursor="Arrow" IsEnabled="False" Value="180" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="Black" Grid.Column="1"/>
+            <Slider x:Name="HorizontalRightJoy" HorizontalAlignment="Left" Margin="280,266,0,0" VerticalAlignment="Top" Width="70" Maximum="65535" Cursor="Arrow" IsEnabled="False" Value="180" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="Black" Grid.Column="1"/>
+            <Slider x:Name="VerticalRightJoy" HorizontalAlignment="Left" Margin="346,189,0,0" VerticalAlignment="Top" Width="20" Maximum="65535" Cursor="Arrow" IsEnabled="False" Value="180" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="Black" Orientation="Vertical" Height="58" Grid.Column="1"/>
+            <Slider x:Name="VerticalLeftJoy" HorizontalAlignment="Left" Margin="91,188,0,0" VerticalAlignment="Top" Width="20" Maximum="65535" Cursor="Arrow" IsEnabled="False" Value="180" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="Black" Orientation="Vertical" Height="59" Grid.Column="1"/>
+            <TextBox x:Name="valuebox" TextWrapping="Wrap" HorizontalAlignment="Left" Height="383" Margin="-341,-33,0,0"  Text="TextBox" VerticalAlignment="Top" Width="335"/>
+            <Image x:Name="btn11Image"  Height="59" Margin="280,188,195,103"  Width="70" Source="RedCircle.png" Grid.Column="1"/>
+            <TextBlock  Margin="291,207,209,127"  Text="11" TextAlignment="Center" Grid.Column="1" />
+            <Image x:Name="btn0Image" Margin="366,42,120,257" Source="RedCircle.png" Grid.Column="1"/>
+            <TextBlock  Margin="371,60,129,274"  Text="0" TextAlignment="Center" Grid.Column="1" />
+            <Image x:Name="btn1Image" Margin="416,91,68,208" Source="RedCircle.png" Grid.Column="1"/>
+            <TextBlock  Margin="421,109,79,225"  Text="1" TextAlignment="Center" Grid.Column="1" />
+            <Image x:Name="btn2Image" Margin="366,138,120,161" Source="RedCircle.png" Grid.Column="1"/>
+            <TextBlock  Margin="371,156,129,178"  Text="2" TextAlignment="Center" Grid.Column="1" />
+            <Image x:Name="btn3Image" Margin="312,91,170,208" Source="RedCircle.png" Grid.Column="1"/>
+            <TextBlock  Margin="321,109,179,225"  Text="3" TextAlignment="Center" Grid.Column="1" />
+            <Image x:Name="btn9Image" Margin="236,127,257,182" Source="RedCircle.png" Grid.Column="1"/>
+            <TextBlock  Margin="239,138,263,196"  Text="9" TextAlignment="Center" Grid.Column="1" />
+            <Image x:Name="btn8Image" Margin="178,126,316,182" Source="RedCircle.png" Grid.Column="1"/>
+            <TextBlock  Margin="186,138,325,196"  Text="8" TextAlignment="Center" Grid.Column="1" />
+            <Image x:Name="btn10Image"  Height="59" Margin="115,188,360,103"  Width="70" Source="RedCircle.png" Grid.Column="1"/>
+            <TextBlock  Margin="126,207,374,127"  Text="10" TextAlignment="Center" Grid.Column="1" />
+        </Grid>
+
+
+    </Grid>
+</Window>
